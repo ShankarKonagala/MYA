@@ -2,10 +2,15 @@
 - hosts: all
   become: yes
   tasks: 
-  - name: installing apache2
+  - name: installing apache2 in ubuntu
     apt: 
        name: apache2
        state: present
     when: ansible_os_family =="Debian"     
+
+  - name: Install Apache Web Server
+    yum:
+        name: httpd
+        state: latest
 
         
