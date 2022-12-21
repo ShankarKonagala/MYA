@@ -6,6 +6,6 @@
   - name: installing apache on redhat
     yum:
      name: httpd
-     state: present
+     state: latest
 
         
