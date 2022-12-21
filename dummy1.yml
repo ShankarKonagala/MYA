@@ -2,9 +2,14 @@
 - hosts: all
   become: yes
   tasks: 
-  - name: installing apache2
+  - name: installing apache2 on ubuntu
     apt: 
        name: apache2
        state: present
+
+  - name: installing apache on redhat
+    service:
+     name: httpd
+     state: present
 
         
