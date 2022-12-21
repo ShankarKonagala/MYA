@@ -2,10 +2,16 @@
 - hosts: all
   become: yes
   tasks:
-
-  - name: installing apache on redhat
+  - name: Install Apache Web Server
     yum:
-     name: httpd
-     state: latest
+        name: httpd
+        state: latest
+    notify:
+        - start apache
+  handlers:
+    - name: start apache
+      service:
+        name: httpd
+        state: started
 
         
