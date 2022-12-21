@@ -2,10 +2,10 @@
 - hosts: all
   become: yes
   tasks: 
-  - name: uninstalling apache2
+  - name: installing apache2
     apt: 
        name: apache2
-       state: absent
+       state: present
     when: ansible_os_family =="Debian"     
 
         
