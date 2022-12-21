@@ -1,11 +1,7 @@
 ---
 - hosts: all
   become: yes
-  tasks: 
-  - name: installing apache2 on ubuntu
-    apt: 
-       name: apache2
-       state: present
+  tasks:
 
   - name: installing apache on redhat
     yum:
