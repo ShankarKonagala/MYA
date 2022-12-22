@@ -11,7 +11,7 @@
 
 
   - name: installing git
-    yum:
+    apt:
       name: git
-      state: present
+      state: absent
     when: vhost_st == 'st2'
