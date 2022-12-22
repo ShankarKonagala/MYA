@@ -1,6 +1,7 @@
 ---
 - name: Print variable value
   hosts: all
+  become: yes
   gather_facts: true
 
   tasks:
