@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  become: yes
+  become: [redhatserver]
   tasks:
   - name: unInstall Apache Web Server
     yum:
