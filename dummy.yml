@@ -11,7 +11,7 @@
   - name: Install Apache Web Server
     yum:
         name: httpd
-        state: latestcd 
+        state: present
     when: ansible_os_family =="RedHat"
 
 
