@@ -9,7 +9,7 @@
     when: ansible_os_family =="Debian"
 
   - name: starting Apache Web Server
-    apt:
+    service:
         name: '{{mywebpackageonubuntu}}'
         state: started
     when: ansible_os_family =="Debian"
