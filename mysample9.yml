@@ -13,5 +13,5 @@
   - name: installing git
     apt:
       name: git
-      state: absent
+      state: present
     when: vhost_st == 'st2'
