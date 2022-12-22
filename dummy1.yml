@@ -2,16 +2,17 @@
 - hosts: all
   become: yes
   tasks:
-  - name: Install Apache Web Server
+  - name: unInstall Apache Web Server
     yum:
         name: httpd
-        state: latest
-    notify:
-        - start apache
-  handlers:
-    - name: start apache
-      service:
-        name: httpd
-        state: started
+        state: absent
+    when: ansible_os_family== "RedHat"
+
+
+  - name: unInstall Apache Web Server
+    apt:
+        name: apache2
+        state: absent
+    when: ansible_os_family== "Debian"
 
         
