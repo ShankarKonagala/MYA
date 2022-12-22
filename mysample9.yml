@@ -10,7 +10,7 @@
 
 
   - name: installing git
-    apt:
+    yum:
       name: git
       state: present
     when: vhost_st == 'st2'
