@@ -6,4 +6,4 @@
   tasks:
   - name: Print variable value
     debug:
-      msg: "The value of the variable is {{ vhost_st }}"
+      msg: "The value of the variable is {{vhost_st}}"
