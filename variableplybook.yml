@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Apache Web Server
+    apt:
+        name: '{{mywebpackageonubuntu}}'
+        state: present
+    when: ansible_os_family =="Debian"
+
+  - name: Install Apache Web Server
+    yum:
+        name: '{{mywebpackageonredhat}}'
+        state: present
+    when: ansible_os_family =="RedHat"
+
+        
