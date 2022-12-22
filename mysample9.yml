@@ -1,16 +1,9 @@
 ---
-- hosts: all
-  become: yes
+- name: Print variable value
+  hosts: all
+  gather_facts: true
+
   tasks:
-  
-  
-    - name: installing git in ubuntu
-      apt: 
-        name: git
-        state: present
-      when: vhost_st=="st2" 
-
-  
-
-
-        
+  - name: Print variable value
+    debug:
+      msg: "The value of the variable is {{ vhost_st }}"
