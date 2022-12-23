@@ -20,4 +20,9 @@
      name: tree
      state: present
     tags: mytree
+
+
+    # ansible-playbook -i myhosts tags.yml
+    # ansible-playbook -i myhosts tags.yml  --tags=mygit
+    # ansible-playbook -i myhosts tags.yml  --skip-tags=mygit
      
