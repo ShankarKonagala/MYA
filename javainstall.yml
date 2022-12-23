@@ -1,6 +1,6 @@
 ---
 - become: yes
-  host: webserver
+  hosts: webserver
   tasks:
   - name: Installing java on ubuntu
     apt:
