@@ -10,7 +10,7 @@
 
   - name: displaying variable of myvar3
     debug:
-     msg:'{{tree}}'
+     msg:'{{myvar3}}'
 
   - name: running linux command
     command: hostname -f
