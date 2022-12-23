@@ -27,9 +27,9 @@
   - name: installing git
     apt: 
       name: "{{myvar1}}"
-      state: present
+      state: presentt
     tags: mygit
-    when: ansible_os_family== "Debiann"
+    when: ansible_os_family== "Debian"
     ignore_errors: True
 
   - name: installing wget
