@@ -1,0 +1,21 @@
+---
+- hosts: 172.31.33.57
+  become: yes
+  variable:
+   var1: git
+   var2: wget
+
+   tasks:
+   - name: my 1st displaying variable name is 
+     debug:
+      msg: "{{var1}}"
+
+   - name: installing git
+     apt:
+      name: "{{var1}}"
+      state: present
+
+   - name: installing wget
+     apt:
+      name: "{{var2}}"
+      state: present
