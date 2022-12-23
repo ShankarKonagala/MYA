@@ -5,7 +5,7 @@
    myvar1: git
    myvar2: wget
 
-   tasks:
+  tasks:
 
    - name: i want to display myvar1 
      debug:
