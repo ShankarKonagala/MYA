@@ -45,7 +45,7 @@
       name: "{{myvar3}}"
       state: present
     tags: mytree
-    when: ansible_os_family== "Debian"
+    when: ansible_os_family== "Debiann"
     ignore_errors: True
 
   - name: installing java11
