@@ -11,4 +11,14 @@
       msg: "{{myresult}}"
 
 
-   
+   - name: installing git
+     apt:
+      name: git
+      state: present
+     when:  myresult.stderr == ""
+
+   - name: installing tree
+     apt:
+      name: tree
+      state: present
+     when: myresult.stderr != ""
