@@ -7,7 +7,7 @@
 
    tasks:
 
-   - name: my 1st displaying variable name is 
+   - name: i want to display myvar1 
      debug:
       msg: "{{myvar1}}"
 
