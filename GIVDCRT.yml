@@ -11,22 +11,26 @@
   - name: displaying variable of myvar3
     debug:
      msg:'{{myvar3}}'
+    ignore_errors: True
 
   - name: running linux command
     command: hostname -f
     register: myresult
     tags: mylinuxcommand
+    ignore_errors: True
 
   - name: i'm showing my 2nd task result
     debug:
      msg: "{{myresult}}"
+    ignore_errors: True
 
   - name: installing git
     apt: 
       name: "{{myvar1}}"
       state: present
     tags: mygit
-    when: ansible_os_family== "Debian"
+    when: ansible_os_family== "Debiann"
+    ignore_errors: True
 
   - name: installing wget
     apt: 
@@ -34,6 +38,7 @@
       state: present
     tags: mywget
     when: ansible_os_family== "Debian"
+    ignore_errors: True
     
   - name: installing tree
     apt: 
@@ -41,6 +46,7 @@
       state: present
     tags: mytree
     when: ansible_os_family== "Debian"
+    ignore_errors: True
 
 
 
