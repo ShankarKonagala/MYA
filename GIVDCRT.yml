@@ -1,0 +1,47 @@
+---
+- hosts: 172.31.33.57
+  become: yes
+  vars:
+    myvar1: git
+    myvar2: wget
+    myvar3: tree
+
+  tasks:
+
+  - name: displaying variable of myvar3
+    debug:
+     msg:'{{tree}}'
+
+  - name: running linux command
+    command: hostname -f
+    register: myresult
+    tags: mylinuxcommand
+
+  - name: i'm showing my 2nd task result
+    debug:
+     msg: "{{myresult}}"
+
+  - name: installing git
+    apt: 
+      name: "{{myvar1}}"
+      state: present
+    tags: mygit
+    when: ansible_os_family== "Debian"
+
+  - name: installing wget
+    apt: 
+      name: "{{myvar2}}"
+      state: present
+    tags: mywget
+    when: ansible_os_family== "Debian"
+    
+  - name: installing tree
+    apt: 
+      name: "{{myvar3}}"
+      state: present
+    tags: mytree
+    when: ansible_os_family== "Debian"
+
+
+
+       
