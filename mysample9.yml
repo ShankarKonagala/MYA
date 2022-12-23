@@ -4,14 +4,8 @@
   become: yes
   gather_facts: true
 
-  tasks:
-  - name: Print variable value
-    debug:
-      msg: "The value of the variable is {{vhost_st}}"
-
-
-  - name: installing git
-    apt:
+- name: uninstalling git
+  apt:
       name: git
-      state: present
-    when: vhost_st == 'st2'
+      state: absent
+  when: vhost_st == 'st2'
