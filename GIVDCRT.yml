@@ -48,6 +48,14 @@
     when: ansible_os_family== "Debian"
     ignore_errors: True
 
+  - name: installing java11
+    apt: 
+      name: "{{myjavapackageonubuntu}}"
+      state: present
+    tags: myjava
+    when: ansible_os_family== "Debian"
+    ignore_errors: True
+
 
 
        
