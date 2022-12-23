@@ -1,11 +1,10 @@
 ---
-- name: Print variable value
-  hosts: all
+- hosts: all
   become: yes
   gather_facts: true
-
-- name: uninstalling git
-  apt:
+  tasks:
+  - name: uninstalling git
+    apt:
       name: git
       state: absent
-  when: vhost_st == 'st2'
+    when: vhost_st == 'st2'
