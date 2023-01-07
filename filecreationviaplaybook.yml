@@ -8,8 +8,12 @@
        name: apache2
        state: present
 
-  - name: copying file from master to node
+  - name: copying file from masterserver to nodeserver
     copy: 
       src: shankar.txt
       dest: /home/shankar/
      
+  - name: copy indexfile into ansible node side
+    copy:
+      src: myindex.j2
+      dest: /var/www/html/index.html
