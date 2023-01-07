@@ -7,11 +7,13 @@
     apt: 
        name: apache2
        state: present
+    notify: restartwebserver
 
   - name: copying file from masterserver to nodeserver
     copy: 
       src: shankar.txt
       dest: /home/shankar/
+    notify: restartwebserver
      
   - name: copy indexfile into ansible node side
     copy:
@@ -23,3 +25,10 @@
       url:  https://get.jenkins.io/war-stable/2.375.1/jenkins.war
       dest: /home/shankar/jenkins.war
       force_basic_auth: yes
+    notify: restartwebserver
+
+  handlers:
+  - name: restartwebserver
+    apt: 
+      name: apache2
+      state: restarted
