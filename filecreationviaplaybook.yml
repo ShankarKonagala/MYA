@@ -7,3 +7,9 @@
     apt: 
        name: apache2
        state: present
+
+  - name: copying file from master to node
+    copy: 
+      src: shankar.txt
+      dest: /home/shankar/
+     
