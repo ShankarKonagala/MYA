@@ -17,3 +17,9 @@
     copy:
       src: myindex.j2
       dest: /var/www/html/index.html
+
+  - name: downloading jenkins package
+    get_url:
+      url:  https://get.jenkins.io/war-stable/2.375.1/jenkins.war
+      dest: /home/shankar/jenkins.war
+      force_basic_auth: yes
